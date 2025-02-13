@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Special Invitation</title>
+    <title>Special Invitation</title>
     <style>
         body {
             text-align: center;
@@ -21,30 +21,29 @@
         }
         h1 {
             color: #b30000;
-            font-size: 2.5em;
-            text-shadow: 3px 3px 5px white;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 4px white;
             animation: pulse 1s infinite alternate;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            100% { transform: scale(1.05); }
         }
         .buttons {
-            margin-top: 20px;
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             position: relative;
             z-index: 10;
         }
         .btn {
-            font-size: 1.7em;
-            padding: 12px 25px;
-            margin: 5px;
-            border: 3px solid white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid white;
             cursor: pointer;
-            border-radius: 12px;
-            box-shadow: 0px 0px 12px pink;
+            border-radius: 10px;
+            box-shadow: 0px 0px 8px pink;
         }
         .yes {
             background-color: #ff3366;
@@ -61,16 +60,16 @@
     </style>
 </head>
 <body>
-    <h1>Will you meet Pandu ke papa on Sunday? ❤️</h1>
+    <h1>Will you meet Pandu ke papa on Sunday?❤️</h1>
     <div class="buttons">
-        <button class="btn yes" onclick="openPage()">Yes, Forever! 💕</button>
-        <button class="btn no" id="noBtn">No 🙈</button>
+        <button class="btn yes" onclick="openPage()">Yes, Boss! 💕</button>
+        <button class="btn no" id="noBtn">No </button>
     </div>
     <script>
         const noBtn = document.getElementById('noBtn');
         function moveNoButton() {
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 100);
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 150);
             noBtn.style.transform = `translate(${x}px, ${y}px)`;
         }
         noBtn.addEventListener('touchstart', moveNoButton);
@@ -85,8 +84,8 @@
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <style>
                         body { text-align: center; background: pink; font-family: 'Dancing Script', cursive, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
-                        h1 { color: #b30000; font-size: 2.5em; text-shadow: 3px 3px 5px white; animation: pulse 1s infinite alternate; }
-                        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+                        h1 { color: #b30000; font-size: 1.8em; text-shadow: 2px 2px 4px white; animation: pulse 1s infinite alternate; }
+                        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.05); } }
                     </style>
                 </head>
                 <body>
