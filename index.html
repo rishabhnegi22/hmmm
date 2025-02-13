@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Special Invitation</title>
+    <title>Special Invitation</title>
     <style>
         body {
             text-align: center;
@@ -33,8 +33,8 @@
         .buttons {
             margin-top: 20px;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            flex-direction: column; /* Stacked vertically */
+            gap: 20px;
             position: relative;
             z-index: 10;
         }
@@ -84,14 +84,18 @@
     </div>
     <script>
         const noBtn = document.getElementById('noBtn');
+
+        // Function to move the "No" button very fast
         function moveNoButton() {
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);  // Ensure it stays inside the window
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight); // Ensure it stays inside the window
+            noBtn.style.transition = "transform 0.1s ease";  // Make it move fast
+            noBtn.style.transform = `translate(${x}px, ${y}px)`; // Move button to a random position
         }
-        noBtn.addEventListener('touchstart', moveNoButton);
-        noBtn.addEventListener('mouseover', moveNoButton);
-        
+
+        // Continuously move the "No" button as soon as the page is loaded
+        setInterval(moveNoButton, 100); // Moves the button every 100ms
+
         function openPage() {
             const newWindow = window.open('', '_blank');
             newWindow.document.write(`
