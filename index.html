@@ -55,10 +55,9 @@
         .no {
             background-color: #ff99cc;
             color: black;
-            position: absolute;
             transition: all 0.1s ease-in-out;
-            z-index: 5;
         }
+
         /* Mobile view adjustments */
         @media (max-width: 600px) {
             body {
@@ -72,7 +71,7 @@
                 padding: 10px 20px;
             }
             .buttons {
-                gap: 10px;
+                gap: 20px;
             }
         }
     </style>
@@ -86,8 +85,8 @@
     <script>
         const noBtn = document.getElementById('noBtn');
         function moveNoButton() {
-            const x = Math.random() * (window.innerWidth - 150);
-            const y = Math.random() * (window.innerHeight - 150);
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
             noBtn.style.transform = `translate(${x}px, ${y}px)`;
         }
         noBtn.addEventListener('touchstart', moveNoButton);
