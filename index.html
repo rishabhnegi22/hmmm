@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Date Invite</title>
+    <title>Valentine's Special Invitation</title>
     <style>
         body {
             text-align: center;
             background: url('https://www.transparenttextures.com/patterns/romantic-valentine.png'), pink;
             background-size: cover;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Dancing Script', cursive, sans-serif;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -20,9 +20,9 @@
             padding: 20px;
         }
         h1 {
-            color: red;
-            font-size: 2em;
-            text-shadow: 4px 4px 6px white;
+            color: #b30000;
+            font-size: 2.5em;
+            text-shadow: 3px 3px 5px white;
             animation: pulse 1s infinite alternate;
         }
         @keyframes pulse {
@@ -34,59 +34,63 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            position: relative;
+            z-index: 10;
         }
         .btn {
-            font-size: 1.5em;
-            padding: 10px 20px;
+            font-size: 1.7em;
+            padding: 12px 25px;
             margin: 5px;
             border: 3px solid white;
             cursor: pointer;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px pink;
+            border-radius: 12px;
+            box-shadow: 0px 0px 12px pink;
         }
         .yes {
-            background-color: red;
+            background-color: #ff3366;
             color: white;
             font-weight: bold;
         }
         .no {
-            background-color: pink;
+            background-color: #ff99cc;
             color: black;
             position: absolute;
             transition: all 0.1s ease-in-out;
+            z-index: 5;
         }
     </style>
 </head>
 <body>
     <h1>Will you meet Pandu ke papa on Sunday? ❤️</h1>
     <div class="buttons">
-        <button class="btn yes" onclick="openPage()">Yes</button>
-        <button class="btn no" id="noBtn">No</button>
+        <button class="btn yes" onclick="openPage()">Yes, Forever! 💕</button>
+        <button class="btn no" id="noBtn">No 🙈</button>
     </div>
     <script>
         const noBtn = document.getElementById('noBtn');
-        noBtn.addEventListener('touchstart', () => {
+        function moveNoButton() {
             const x = Math.random() * (window.innerWidth - 100);
             const y = Math.random() * (window.innerHeight - 100);
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-        });
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+        noBtn.addEventListener('touchstart', moveNoButton);
+        noBtn.addEventListener('mouseover', moveNoButton);
         
         function openPage() {
             const newWindow = window.open('', '_blank');
             newWindow.document.write(`
                 <html>
                 <head>
-                    <title>See You on Sunday!</title>
+                    <title>Our Perfect Date</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <style>
-                        body { text-align: center; background: pink; font-family: 'Comic Sans MS', cursive, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
-                        h1 { color: red; font-size: 2em; text-shadow: 4px 4px 6px white; animation: pulse 1s infinite alternate; }
+                        body { text-align: center; background: pink; font-family: 'Dancing Script', cursive, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 20px; }
+                        h1 { color: #b30000; font-size: 2.5em; text-shadow: 3px 3px 5px white; animation: pulse 1s infinite alternate; }
                         @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
                     </style>
                 </head>
                 <body>
-                    <h1>Yayy, let’s meet on Sunday! I will be there at 6 ❤️</h1>
+                    <h1>Yayy! Let’s Meet on Sunday! 💖 I’ll Be There at 6 ❤️</h1>
                 </body>
                 </html>
             `);
